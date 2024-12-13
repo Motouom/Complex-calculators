@@ -1,0 +1,13 @@
+{
+    "name": "calculator-project",
+    "version": "1.0.0",
+    "description": "A simple calculator project",
+    "main": "src/script.js",
+    "scripts": {
+      "start": "npx http-server -p 8080"
+    },
+    "dependencies": {
+      "http-server": "^0.12.3"
+    }
+  }
+  
