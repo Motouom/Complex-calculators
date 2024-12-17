@@ -1,10 +1,17 @@
-# Use a base image with Nginx to serve static files alpine
-FROM nginx:alpine
+# use official node.js runtime as base image
+FROM node:18-slim
 
-# Set the working directory
+#set a working directory
+WORKDIR /app
 
-# Copy the files from the local machine to the container
+#copy project fijles into the container
+COPY . .
 
-# Expose port 80 to access the app
+# installing a simple static file server. NPM: node package manager
+RUN npm install -g serve
 
-# Start Nginx server
+#expose the port where the server will run
+EXPOSE 5003
+
+# command to run the static file server \
+CMD ["serve", "-s", ".", "-l", "5003"]
